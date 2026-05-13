@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cbdreviewhouse.info/sitemap.xml
+Sitemap: http://cbdreviewhouse.info/sitemap.xml
