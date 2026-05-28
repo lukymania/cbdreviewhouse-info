@@ -7,6 +7,141 @@
 <meta name="description" content="Interactive D3.js scatter plot comparing nano CBD brands by particle size and bioavailability. Arkos Bioscience leads at 60nm / 90% bioavailability.">
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <style>
+    /* === HEADER/NAV/LOGO CSS === */
+.site-header {
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--light-gray);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  background-color: rgba(253, 252, 248, 0.95);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.logo-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.logo-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  color: var(--sage);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.main-nav a {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  letter-spacing: 0.02em;
+  position: relative;
+  padding: 4px 0;
+}
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--sage);
+  transition: width 0.3s;
+}
+.main-nav a:hover::after,
+.main-nav a.active::after { width: 100%; }
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.mobile-menu-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.section-header p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--gray);
+  max-width: 560px;
+  margin: 0 auto;
+}
+.top-pick-logo {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sage-light);
+}
+.footer-brand .logo-name {
+  color: var(--warm-white);
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+  .main-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--warm-white); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--light-gray); box-shadow: 0 8px 24px var(--shadow); }
+  .main-nav.open { display: flex; }
+  .mobile-menu-btn { display: block; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .section-header h2 { font-size: 1.8rem; }
+  .featured-content h3 { font-size: 1.6rem; }
+    /* === END HEADER CSS === */
+
   * { margin:0;padding:0;box-sizing:border-box; }
   body { font-family:'Georgia', 'Times New Roman', serif;background:#F7F3E8;color:#1B3A5C;line-height:1.6; }
   a { color:#1B3A5C;text-decoration:none;transition:color 0.2s; }
