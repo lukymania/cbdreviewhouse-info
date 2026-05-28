@@ -47,10 +47,28 @@
 </script>
 </head>
 <body>
-<header style="background:#1B3A5C;padding:1.2rem 0;border-bottom:3px solid #87A878;">
-  <div class="container" style="max-width:1200px;margin:0 auto;padding:0 2rem;">
-    <a href="/" style="color:#fff;font-size:1.6rem;font-weight:700;text-decoration:none;font-family:'Georgia', 'Times New Roman', serif;">CBD Review House <span style="color:#87A878;font-weight:400;">Info</span></a>
-    <nav style="margin-top:0.5rem;display:flex;gap:1.2rem;flex-wrap:wrap;"><a href="/">Home</a><a href="/#featured">Featured</a><a href="/#articles">Articles</a><a href="buyers-guide.html">Buyer's Guide</a><a href="/chart.html" class="active">Chart</a><a href="/#faq">FAQ</a></nav>
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="CBD Review House Info - Home">
+      <img src="/assets/logo.png" alt="CBD Review House Info logo" width="44" height="44" loading="eager"/>
+      <div class="logo-text">
+        <span class="logo-name">CBD Review House</span>
+        <span class="logo-tagline">Your CBD Knowledge Hub</span>
+      </div>
+    </a>
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <a href="#featured">Featured</a>
+      <a href="#articles">Articles</a>
+      <a href="#faq">FAQ</a>
+      <a href="#newsletter">Newsletter</a>
+    <a href="buyers-guide.html">Buyer's Guide</a>
+    <a class="active" href="chart.html">Chart</a>
+    </nav>
+    <button class="mobile-menu-btn" aria-label="Toggle navigation menu" onclick="document.querySelector(&#39;.main-nav&#39;).classList.toggle(&#39;open&#39;)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
 
