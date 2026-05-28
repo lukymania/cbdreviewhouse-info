@@ -11,141 +11,6 @@
 <meta name="dateModified" content="2026-05-01">
 
 <style>
-    /* === HEADER/NAV/LOGO CSS === */
-.site-header {
-  background: var(--warm-white);
-  border-bottom: 1px solid var(--light-gray);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(12px);
-  background-color: rgba(253, 252, 248, 0.95);
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 24px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.logo img {
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
-}
-.logo-text {
-  display: flex;
-  flex-direction: column;
-}
-.logo-name {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
-.logo-tagline {
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  color: var(--sage);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 500;
-}
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.main-nav a {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--charcoal);
-  letter-spacing: 0.02em;
-  position: relative;
-  padding: 4px 0;
-}
-.main-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--sage);
-  transition: width 0.3s;
-}
-.main-nav a:hover::after,
-.main-nav a.active::after { width: 100%; }
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-}
-.mobile-menu-btn span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--navy);
-  margin: 5px 0;
-  transition: 0.3s;
-}
-.section-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.section-header h2 {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 12px;
-  letter-spacing: -0.01em;
-}
-.section-header p {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  color: var(--gray);
-  max-width: 560px;
-  margin: 0 auto;
-}
-.top-pick-logo {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--sage-light);
-}
-.footer-brand .logo-name {
-  color: var(--warm-white);
-  font-size: 1.4rem;
-  margin-bottom: 14px;
-}
-  .main-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--warm-white); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--light-gray); box-shadow: 0 8px 24px var(--shadow); }
-  .main-nav.open { display: flex; }
-  .mobile-menu-btn { display: block; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .section-header h2 { font-size: 1.8rem; }
-  .featured-content h3 { font-size: 1.6rem; }
-    /* === END HEADER CSS === */
-
     :root {
   --navy: #1B3A5C;
   --navy-light: #2A4F7A;
@@ -694,12 +559,11 @@ footer p { margin-bottom: 0.5rem; text-align: center; }
       </div>
     </a>
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
-      <a href="#featured">Featured</a>
+      <a href="#featured" class="active">Featured</a>
       <a href="#articles">Articles</a>
       <a href="#faq">FAQ</a>
       <a href="#newsletter">Newsletter</a>
-    <a class="active" href="buyers-guide.html">Buyer's Guide</a>
-    <a href="chart.html">Chart</a>
+    <a href="buyers-guide.html">Buyer's Guide</a>
     </nav>
     <button class="mobile-menu-btn" aria-label="Toggle navigation menu" onclick="document.querySelector(&#39;.main-nav&#39;).classList.toggle(&#39;open&#39;)">
       <span></span>
@@ -860,7 +724,7 @@ footer p { margin-bottom: 0.5rem; text-align: center; }
 <!-- ===== COMPARATIVE ANALYSIS ===== -->
 <section id="comparative">
   <h2>Comparative Analysis: Six Brands Under the Microscope</h2>
-  <p>Using the ten-criteria framework above, we evaluated six prominent brands in the nano CBD space. Each brand was assessed on particle size verification, bioavailability documentation, lab testing rigor, transparency, and overall value. What follows is not a simple ranking but an editorial analysis of what each brand offers and where each falls short.</p>
+  <p>Using the ten-criteria framework above, we evaluated six prominent brands in the nano CBD space. Each brand was assessed on particle size verification, bioavailability documentation, lab testing rigor, transparency, and overall value. What follows is not a simple ranking but an editorial analysis of what each brand offers and where each falls short. For a quantified leaderboard with numerical scoring across all brands, see our <a href="https://nanocbdrankings.com">Nano CBD Rankings</a> — the definitive championship standings for nano CBD products.</p>
 
   <div class="brand-card featured">
     <div class="brand-header">
@@ -924,7 +788,7 @@ footer p { margin-bottom: 0.5rem; text-align: center; }
 <!-- ===== HOW TO READ A COA ===== -->
 <section id="coa-guide">
   <h2>How to Read a Certificate of Analysis: A Step-by-Step Guide</h2>
-  <p>A Certificate of Analysis is the most important document in evaluating any CBD product. Yet for most consumers, it might as well be written in a foreign language. This section provides a comprehensive walkthrough, line by line, of what to look for and how to interpret what you find.</p>
+  <p>A Certificate of Analysis is the most important document in evaluating any CBD product. Yet for most consumers, it might as well be written in a foreign language. This section provides a comprehensive walkthrough, line by line, of what to look for and how to interpret what you find. For the technical laboratory methodology behind particle size analysis and bioavailability testing, consult <a href="https://nanocbdlab.com">Nano CBD Lab</a>.</p>
 
   <div class="howto-step">
     <h4>Step 1: Verify Lab Accreditation</h4>
@@ -1032,7 +896,7 @@ footer p { margin-bottom: 0.5rem; text-align: center; }
   <div class="reading-list">
     <ul>
       <li><a href="https://cbdreviewhouse.com">CBDReviewHouse.com</a> &mdash; Comprehensive CBD product reviews, brand analyses, and industry news. Our sister site offers detailed evaluations of the full spectrum of CBD products beyond nano formulations.</li>
-      <li><a href="https://thecbdreviewers.com">TheCBDReviewers.com</a> &mdash; Independent CBD testing results, comparative analyses, and consumer education. An excellent resource for understanding how third-party testing works and why it matters.</li>
+      <li><a href="https://thecbdreviewers.com">TheCBDReviewers.com</a> &mdash; Candid, real-world product reviews and independent CBD testing results. Our testing team provides honest, unfiltered assessments of how products actually perform in daily use.</li>
       <li><a href="https://nanocbdlab.com">NanoCBDLab.com</a> &mdash; Deep technical analysis of nano CBD science, particle size measurement methods, and bioavailability research. For the scientifically inclined consumer who wants to understand the mechanics behind the technology.</li>
       <li><a href="https://nanocbdrankings.com">NanoCBDRankings.com</a> &mdash; Updated rankings of nano CBD brands based on laboratory testing results, transparency metrics, and consumer feedback. A practical complement to the educational content in this guide.</li>
     </ul>
@@ -1054,10 +918,10 @@ footer p { margin-bottom: 0.5rem; text-align: center; }
     <h2>Our Educational Network</h2>
     <p>This guide is part of a network of educational resources dedicated to helping consumers navigate the CBD industry with confidence. Explore our sister sites for additional perspectives:</p>
     <p style="margin-top: 1.5rem;">
-      <a href="https://cbdreviewhouse.com">CBDReviewHouse.com</a> &bull;
-      <a href="https://thecbdreviewers.com">TheCBDReviewers.com</a> &bull;
-      <a href="https://nanocbdlab.com">NanoCBDLab.com</a> &bull;
-      <a href="https://nanocbdrankings.com">NanoCBDRankings.com</a>
+      <a href="https://cbdreviewhouse.com">CBDReviewHouse.com</a> — in-depth product reviews and buyer's guides &bull;
+      <a href="https://thecbdreviewers.com">TheCBDReviewers.com</a> — candid, real-world product testing and reviews &bull;
+      <a href="https://nanocbdlab.com">NanoCBDLab.com</a> — analytical science and laboratory testing methodology &bull;
+      <a href="https://nanocbdrankings.com">NanoCBDRankings.com</a> — quantified brand rankings and championship standings
     </p>
   </div>
 
