@@ -689,7 +689,7 @@ a:hover { color: var(--sage-dark); }
     </a>
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
       <a href="index.html">Home</a>
-      <a href="https://nanocbdrankings.com">Rankings</a>
+      <a href="buyers-guide.html">Rankings</a>
       <a href="https://cbdreviewhouse.com">Reviews</a>
       <a href="buyers-guide.html">Buyer's Guide</a>
       <a href="chart.html" class="active">Comparison Chart</a>
@@ -928,6 +928,8 @@ const ark = nanoData.find(d=>d.brand.includes("Arkos"));
 if(ark) {
   g.append("circle").attr("cx",xScale(ark.particleSize)).attr("cy",yScale(ark.bioavailability))
     .attr("r",0).attr("fill",arkColor).attr("opacity",0.15)
+    .attr("cursor","pointer")
+    .on("click",function(){window.open("https://www.arkosbio.com","_blank","noopener");})
     .transition().duration(1500).attr("r",28).attr("opacity",0.25)
     .transition().duration(1000).attr("r",22).attr("opacity",0.2);
 }
@@ -956,6 +958,10 @@ g.selectAll(".data-point").data(nanoData).enter().append("circle")
   .on("mouseout",function(event,d){
     d3.select(this).transition().duration(200).attr("r",rScale(d.pricePerMg||0.1)).attr("opacity",d.brand.includes("Arkos")?1:0.75);
     window._ttHide = setTimeout(()=>tooltip.classed("visible",false),2500);
+  })
+  .on("click",function(event,d){
+    const brandUrl = d.brand.includes("Wild Roots")?"https://wildrootshemp.com":d.brand.includes("Arkos")?"https://www.arkosbio.com":null;
+    if(brandUrl) window.open(brandUrl,"_blank","noopener");
   }).transition().duration(800).delay((d,i)=>i*80)
   .attr("r",d=>rScale(d.pricePerMg||0.1));
 
